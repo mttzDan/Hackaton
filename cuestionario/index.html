@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test de Identidad del Aficionado | Liga MX</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+    <div class="container py-2">
+      <span class="navbar-brand fw-semibold">Test de Identidad del Aficionado</span>
+      <span class="badge text-bg-secondary">Liga MX</span>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Vista 1: Cuestionario -->
+        <section id="quizView" class="app-card p-4 app-fade-in">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <div>
+              <h4 class="mb-1">Descubre tu perfil de aficionado</h4>
+              <p class="app-muted mb-0">
+                Responde con honestidad. No hay respuestas correctas: cada elección refleja tu estilo de afición.
+              </p>
+            </div>
+            <button id="btnRestartTop" class="btn btn-outline-light btn-sm">Reiniciar</button>
+          </div>
+
+          <hr class="border border-light border-opacity-10 my-4">
+
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="app-muted" id="progressLabel">Pregunta 1 de 10</div>
+            <div class="app-muted" id="progressPct">10%</div>
+          </div>
+          <div class="progress app-progress mb-4">
+            <div id="progressBar" class="progress-bar" role="progressbar" style="width: 10%"></div>
+          </div>
+
+          <h5 id="questionText" class="mb-3">Cargando…</h5>
+
+          <div class="d-grid gap-2" id="optionsWrap"></div>
+
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <button id="btnBack" class="btn btn-outline-secondary" disabled>Atrás</button>
+            <button id="btnNext" class="btn btn-primary" disabled>Siguiente</button>
+          </div>
+
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <div id="spinner" class="spinner-border spinner-border-sm text-light d-none" role="status"></div>
+            <div id="status" class="app-muted">Listo.</div>
+          </div>
+        </section>
+
+        <!-- Vista 2: Resultado -->
+        <section id="resultView" class="app-card p-4 app-fade-in d-none">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <div>
+              <h4 class="mb-1">Revelación</h4>
+              <p class="app-muted mb-0">Este perfil refleja tu forma de vivir la afición.</p>
+            </div>
+            <button id="btnRestartResult" class="btn btn-outline-light btn-sm">Volver a intentar</button>
+          </div>
+
+          <hr class="border border-light border-opacity-10 my-4">
+
+          <div class="row g-4 align-items-center">
+            <div class="col-md-5 text-center">
+
+              <!-- Imagen dinámica del equipo -->
+              <img
+                id="teamImage"
+                class="img-fluid rounded-4 shadow-sm mx-auto d-block"
+                alt="Equipo seleccionado"
+              />
+
+              <!-- Perfil dominante (se mantiene) -->
+              <div class="app-muted mt-2" id="teamNameSmall">—</div>
+            </div>
+
+            <div class="col-md-7">
+              <h5 class="mb-2" id="archetypeTitle">—</h5>
+              <p class="app-muted mb-3" id="revealText">—</p>
+
+              <div class="app-card app-subcard p-3">
+                <div class="app-muted mb-2">Tu equipo más afín</div>
+                <h4 class="mb-0" id="teamName">—</h4>
+              </div>
+
+              <!-- Botón a otra página del proyecto (reemplaza "Compartir") -->
+              <div class="mt-3 d-flex flex-wrap gap-2">
+                <a id="btnBuyJersey" class="btn btn-primary" href="tienda.html">
+                  Compra la playera de tu equipo aquí
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
