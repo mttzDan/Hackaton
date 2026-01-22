@@ -1,0 +1,100 @@
+/* =============================================
+   Fuentes y variables globales
+   ============================================= */
+:root {
+  --primary: #007bff;
+  --dark: #0d1117;
+  --very-dark: #000;
+  --navy: #0a192f;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: var(--dark);
+  color: white;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.uppercase-bold {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.hover-text-primary:hover {
+  color: var(--primary) !important;
+}
+
+.premium-blur {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.letter-spacing-wide {
+  letter-spacing: 0.15em;
+}
+
+.letter-spacing-extreme {
+  letter-spacing: 0.3em;
+}
+
+.tiny {
+  font-size: 0.75rem;
+}
+
+.transition-03 {
+  transition: all 0.3s ease;
+}
+
+.product-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+}
+
+/* Imagen principal grande */
+.main-product-img {
+  min-height: 600px;
+  max-height: 800px;
+  object-fit: contain; /* Muestra toda la camiseta sin recortar */
+  width: 100%;
+  height: 100%;
+}
+
+/* Thumbnails */
+.thumbnail-btn {
+  transition: all 0.3s ease;
+}
+
+.thumbnail-btn.active {
+  border-color: var(--primary) !important;
+  border-width: 3px !important;
+}
+
+.thumbnail-btn img {
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-btn:hover img {
+  transform: scale(1.08);
+}
+
+/* Preview de personalización */
+.custom-preview-font {
+  font-family: "Lexend", sans-serif;
+  text-transform: uppercase;
+}
+
+/* Carousel indicators */
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary);
+}
