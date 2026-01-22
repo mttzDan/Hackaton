@@ -1,0 +1,76 @@
+/* styles.css */
+/* Base neutra para poder reutilizar en otras páginas (tema global del proyecto) */
+
+:root{
+  --app-bg: #0b0f19;
+  --app-card: #11182a;
+  --app-text: #e8eefc;
+  --app-muted: rgba(232,238,252,.75);
+  --app-border: rgba(255,255,255,.08);
+}
+
+body{
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+.app-navbar{
+  background: var(--app-bg);
+}
+
+.app-card{
+  background: var(--app-card);
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+}
+
+.app-subcard{
+  background: rgba(255,255,255,.03);
+  border-radius: 16px;
+}
+
+.app-muted{
+  color: var(--app-muted);
+}
+
+.app-progress{
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+}
+.progress-bar{
+  border-radius: 999px;
+}
+
+.app-option{
+  text-align: left;
+  padding: 14px 14px;
+  border-radius: 14px;
+}
+.app-option.active{
+  outline: 2px solid rgba(255,255,255,.35);
+}
+
+.app-fade-in{
+  animation: fadeIn .25s ease-out;
+}
+@keyframes fadeIn{
+  from{ opacity: 0; transform: translateY(6px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.app-team-placeholder{
+  width: 280px;
+  height: 220px;
+  border-radius: 16px;
+  border: 1px dashed rgba(255,255,255,.20);
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.03);
+}
+
+.app-modal{
+  background: var(--app-card);
+  border: 1px solid rgba(255,255,255,.10);
+  color: var(--app-text);
+}
