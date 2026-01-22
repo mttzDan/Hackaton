@@ -1,15 +1,522 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" class="theme-dark">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Store</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | LigaMX Store</title>
+
+    <!-- Fuente principal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Iconos (Material Symbols) -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
     <h1>Aquí empezamos a codificar</h1>
   <h1>Alexis</h1>
     <p>Hola soy Hanna</p>
 
+<body class="app">
+    <div class="min-vh-100 d-flex flex-column overflow-x-hidden">
 
+        <!-- =========================
+         NAVBAR RESPONSIVE (Bootstrap)
+         - En desktop: links visibles
+         - En móvil: hamburguesa (collapse)
+         ========================= -->
+        <header class="sticky-top nav-blur border-bottom border-white-10">
+            <nav class="navbar navbar-expand-lg navbar-dark py-2">
+                <div class="container-xxl">
+
+                    <!-- Logo + nombre -->
+                    <a class="navbar-brand d-flex align-items-center gap-2 m-0" href="#">
+                        <span class="brand-icon text-primary" aria-hidden="true">
+                            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="fs-5 fw-black text-uppercase tracking-tight">LigaMX Store</span>
+                    </a>
+
+                    <!-- Botón hamburguesa (solo aparece en < lg) -->
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+                        aria-label="Abrir menú">
+                        <!-- Icono hamburguesa -->
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Contenido colapsable -->
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+
+                        <!-- Links (lado izquierdo en desktop) -->
+                        <ul class="navbar-nav me-auto mt-3 mt-lg-0 gap-lg-2">
+                            <li class="nav-item">
+                                <a class="nav-link navlink" href="#">Jerseys</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navlink" href="#">Entrenamiento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navlink" href="#">Accesorios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navlink" href="#">Retro</a>
+                            </li>
+                        </ul>
+
+                        <!-- Acciones (lado derecho en desktop) -->
+                        <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 gap-lg-2 pb-3 pb-lg-0">
+
+                            <!-- Buscador (en móvil ocupa todo el ancho, en desktop queda compacto) -->
+                            <div class="position-relative w-100 w-lg-auto">
+                                <input class="form-control form-control-sm search-input ps-5 w-100" type="text"
+                                    placeholder="Busca por equipo o Jersey" aria-label="Buscar" />
+                                <span class="material-symbols-outlined search-icon">search</span>
+                            </div>
+
+                            <!-- Botones: carrito, perfil, tema -->
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-icon text-reset" type="button" id="cartBtn" aria-label="Carrito">
+                                    <span class="material-symbols-outlined">shopping_bag</span>
+                                    <span class="badge-cart" id="cartCount">2</span>
+                                </button>
+
+                                <button class="btn btn-icon text-reset" type="button" aria-label="Perfil">
+                                    <span class="material-symbols-outlined">person</span>
+                                </button>
+
+                                <!-- Toggle modo oscuro/claro -->
+                                <button class="btn btn-sm btn-outline-light-soft ms-1" type="button" id="themeToggle">
+                                    <span class="material-symbols-outlined align-middle" id="themeIcon">dark_mode</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- =========================
+         TEAM SELECTOR (cinta horizontal)
+         ========================= -->
+        <section class="team-strip border-bottom border-white-05">
+            <div class="container-xxl py-3">
+                <div class="team-scroll no-scrollbar d-flex gap-4 align-items-center">
+                    <!-- Equipo activo -->
+                    <a class="team-item active" href="#" aria-current="true">
+                        <div class="team-badge">
+                            <img alt="Escudo del Club América"
+                                src="https://statics-maker.llt-services.com/amx/images/2025/04/01/xsmall-wp/0b6faad3-4d71-49dc-827a-9c2aff74d13b-814.webp" />
+                        </div>
+                        <span class="team-name text-primary">América</span>
+                    </a>
+
+                    <!-- Otros equipos -->
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Chivas"
+                                src="https://storage.chivasdecorazon.com.mx/2018/games_logos_equipos/21_Logo_Chivas.svg" />
+                        </div>
+                        <span class="team-name">Chivas</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Cruz Azul"
+                                src="https://cfcruzazul.com/wp-content/themes/cruz-azul/img/logo_oficial/logocolor.svg?ver=2" />
+                        </div>
+                        <span class="team-name">Cruz Azul</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Pumas"
+                                src="https://pumas.mx/images/logo_pumas.svg" />
+                        </div>
+                        <span class="team-name">Pumas</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Tigres"
+                                src="https://cdn.tigresfans.com/wp-content/uploads/2024/07/26135920/logo-tigres-1.webp" />
+                        </div>
+                        <span class="team-name">Tigres</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Rayados"
+                                src="https://golstatsimages.blob.core.windows.net/teams-80/7.png" />
+                        </div>
+                        <span class="team-name">Rayados</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Toluca"
+                                src="https://statics-maker.llt-services.com/tol/images/2025/10/30/xsmall-wp/dccb6d8e-46d9-46b1-883f-d20e4ed42691-686.webp" />
+                        </div>
+                        <span class="team-name">Toluca</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de León"
+                                src="https://ssl.gstatic.com/onebox/media/sports/logos/IR3AyUUEoSWoeTmicHAlKA_64x64.png" />
+                        </div>
+                        <span class="team-name">León</span>
+                    </a>
+
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Pachuca"
+                                src="https://ssl.gstatic.com/onebox/media/sports/logos/9dscoX8iYhzbjSNxXVp2gQ_64x64.png" />
+                        </div>
+                        <span class="team-name">Pachuca</span>
+                    </a>
+                    <a class="team-item" href="#">
+                        <div class="team-badge">
+                            <img alt="Escudo de Santos"
+                                src="https://www.clubsantos.mx/images/santos-logo-4bd1c8c937a61f66c2aaa6b9f7b9e703.png?vsn" />
+                        </div>
+                        <span class="team-name">Santos</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERO -->
+        <section class="hero position-relative d-flex align-items-center justify-content-center text-center">
+            <div class="hero-bg" role="img" aria-label="Estadio bajo reflectores"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container-xxl position-relative z-1 px-3">
+                <h2 class="display-1 fw-black text-uppercase fst-italic tracking-tight mb-3 text-white">
+                    La Pasión <br><span class="text-primary">en tu piel.</span>
+                </h2>
+                <p class="lead text-white-70 mx-auto mb-4" style="max-width: 720px;">
+                    Experimenta la precisión y la tradición de la nueva colección oficial 2026. Diseñada para el
+                    verdadero fan.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a class="btn btn-primary btn-lg px-5 fw-bold" href="#">Colección de tienda</a>
+                    <a class="btn btn-ghost btn-lg px-5 fw-bold" href="#">Ver catálogo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN -->
+        <main class="container-xxl py-5">
+            <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-4">
+                <div>
+                    <div class="text-primary fw-bold text-uppercase tracking-wide small">Lanzamientos</div>
+                    <h3 class="h1 fw-black text-uppercase mt-2">Nueva temporada</h3>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <select class="form-select form-select-sm select-dark" aria-label="Ordenar productos">
+                        <option>Ordenar por: Más nuevos</option>
+                        <option>Precio: Menor a mayor</option>
+                        <option>Precio: Mayor a menor</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid de productos -->
+            <div class="row g-4">
+                <!-- Producto 1-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="product-card">
+                        <div class="product-media">
+                            <img alt="Jersey América local 2024"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARTLHiUAH1A9pmpx7Shj3gZAbiE2zqH6F94sKylkYc3f656q-p5Qpb4ueLKSgC5wRd7PGTqHAoR68AlZKTiCv72KCzf6sBtZ3Pp1UMnRUBhreSnmtVNfnRrQgHJI0C1q81wC0NtFAoULDx3gIujTwP4Vy8yI_Yy3lO8erMf48TTvLjLMAyriOKPRN9p5ZlBvUvC7v8kcKbTIGHo63hzxzctTgzRYRjwbNoN7FCEXvpLruf2F0psWlFrMXbnl6M2mDQx4kDqeMS_qUu" />
+
+                            <!-- Overlay con acciones (aparece en hover) -->
+                            <div class="product-overlay">
+                                <button class="btn btn-light btn-round js-add-cart" type="button"
+                                    aria-label="Agregar al carrito">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                                <button class="btn btn-light btn-round" type="button" aria-label="Ver detalle">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+
+                            <div class="badge badge-primary-soft">Nuevo</div>
+                        </div>
+
+                        <div class="p-3">
+                            <p class="text-white-50 small fw-bold text-uppercase tracking-wide mb-1">Club América</p>
+                            <h4 class="h6 fw-bold mb-2">24/25 Home Jersey</h4>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="price fw-black">$1,699 MXN</span>
+                                <div class="d-flex gap-1">
+                                    <span class="swatch" style="--swatch:#f7c948"></span>
+                                    <span class="swatch" style="--swatch:#0b2e83"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Producto 2-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="product-card">
+                        <div class="product-media">
+                            <img alt="Jersey Chivas Guadalajara visitante 2024"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwWwrov8P2nn8yIIVYvM65IyuPB3CTtWHcuR46QLAEOkYz8erci6_doTOioSp1yGrqQFffvdsWGNpLV3W14Bdk8z9XFGabXE8cQoUhAUVf14UdUazdKoEbMX05-GSOmiN7uRAkJrjYRI_yz6jdAGjlOdpV6ZOHLl9YV1PdormaPJmDuTYvANul0WkXwHJI-CI0-pees6KiVGLkciFAv8Ykn4sN8ZWpGnnrk0gyaDjNrEDn7TyZsyrA3m5PL_uzYXYhSLjjKcgXZ6FZ" />
+                            <!-- Overlay con acciones (aparece en hover) -->
+                            <div class="product-overlay">
+                                <button class="btn btn-light btn-round js-add-cart" type="button"
+                                    aria-label="Agregar al carrito">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                                <button class="btn btn-light btn-round" type="button" aria-label="Ver detalle">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+
+                            <div class="badge badge-primary-soft">Nuevo</div>
+                        </div>
+
+                        <div class="p-3">
+                            <p class="text-white-50 small fw-bold text-uppercase tracking-wide mb-1">Chivas Guadalajara
+                            </p>
+                            <h4 class="h6 fw-bold mb-2">24/25 Away Jersey</h4>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="price fw-black">$1,599 MXN</span>
+                                <div class="d-flex gap-1">
+                                    <span class="swatch" style="--swatch:#dc2626"></span>
+                                    <span class="swatch" style="--swatch:#ffffff"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Producto 3-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="product-card">
+                        <div class="product-media">
+                            <img alt="Jersey Cruz Azul local 2024" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP2lbitQVXFNCJbnF3_dOce4FUHuWZWVaUbQT2OjvyDgnp__z_NhG6rjSZdxWf1XDHo8vMnSVRwEonaELmDOl6oxVqps4_etivLFX3_X4jAan49-kQEfFwjzgrxmCM7u745imOC7Z2kJTnyO7_nwwmUzLv-gbjzCTWkPXZSqYA-M0Sb9kV5Znt0FUsF8phSnr8XioeOPCYzVC3BnocW-aH04L4dtc3-1gnqjvXZ5jW1ctxJ2kYA2Xujs83Hp7bMofnYk8KZlFd9sKo"/>
+                            <!-- Overlay con acciones (aparece en hover) -->
+                            <div class="product-overlay">
+                                <button class="btn btn-light btn-round js-add-cart" type="button"
+                                    aria-label="Agregar al carrito">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                                <button class="btn btn-light btn-round" type="button" aria-label="Ver detalle">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+
+                            <div class="badge badge-primary-soft">Nuevo</div>
+                        </div>
+
+                        <div class="p-3">
+                            <p class="text-white-50 small fw-bold text-uppercase tracking-wide mb-1">Cruz Azul
+                            </p>
+                            <h4 class="h6 fw-bold mb-2">24/25 Home Jersey</h4>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="price fw-black">$1,699 MXN</span>
+                                <div class="d-flex gap-1">
+                                    <span class="swatch" style="--swatch:#1d4ed8"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Producto 4-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="product-card">
+                        <div class="product-media">
+                            <img alt="Jersey Tigres UANL local 2024" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmeiPC9iPfgZwArDfU_pkwJI2ZDdZXwimu9l0xDxMB3A0t1oRKBlbGCGZdM7SpW_uRwkZwwGpfitffnCeou2x97_V9Fqo0cLdNHLeQjduGtfqJskPKQx3eHr_Hck6pK1zK048jkDgg2CnEq-XiPUrGbZKHrxncK7RCg1y_Uaem6aj_3M3WQmtO5Z0ddp7NQ4EAgm_L3XUwAZvphceQ455EZAvTfmXKflYv6wnANdlQvovtkErVUseP_-Lzulk5xjw-zO_CVemzxDhY"/>
+                            <!-- Overlay con acciones (aparece en hover) -->
+                            <div class="product-overlay">
+                                <button class="btn btn-light btn-round js-add-cart" type="button"
+                                    aria-label="Agregar al carrito">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                                <button class="btn btn-light btn-round" type="button" aria-label="Ver detalle">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+
+                            <div class="badge badge-primary-soft">Best Seller</div>
+                        </div>
+
+                        <div class="p-3">
+                            <p class="text-white-50 small fw-bold text-uppercase tracking-wide mb-1">Tigres UANL
+                            </p>
+                            <h4 class="h6 fw-bold mb-2">24/25 Home Jersey</h4>
+
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="price fw-black">$1,799 MXN</span>
+                                <div class="d-flex gap-1">
+                                    <span class="swatch" style="--swatch:#eab308"></span>
+                                    <span class="swatch" style="--swatch:#2563eb"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Puedes replicar los demás productos igual que antes -->
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-light-soft px-5 py-3 fw-bold" type="button">
+                    Explorar todos los equipos
+                </button>
+            </div>
+        </main>
+
+        <!-- Newsletter -->
+        <section class="bg-navy border-top border-secondary py-5 mt-5">
+            <div class="container-xl px-4 px-md-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-black text-uppercase mb-3 fst-italic">
+                            ¡Únete al ClubMX!
+                        </h2>
+                        <p class="text-secondary fs-5 mb-0">
+                            Obtén acceso a artículos de edición limitada, subastas oficiales
+                            y recompensas exclusivas para fans.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex flex-column flex-sm-row gap-3">
+                            <input type="email" class="form-control bg-dark border-secondary text-white py-3 px-4"
+                                placeholder="Ingresa tu email" aria-label="Email para newsletter" />
+                            <button class="btn btn-primary fw-bold text-uppercase tracking-wider px-5 py-3">
+                                Únete ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-very-dark py-5 border-top border-secondary">
+            <div class="container-xl px-4 px-md-5">
+                <div class="row g-5">
+                    <div class="col-lg-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="text-primary">
+                                <svg fill="currentColor" viewBox="0 0 48 48" width="28" height="28"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd"
+                                        d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                                        fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="fs-4 fw-black text-uppercase">LigaMX Store</span>
+                        </div>
+                        <p class="text-secondary small">
+                            La tienda oficial del fútbol Mexicano.
+
+                        </p>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="row g-5">
+                            <div class="col-6 col-md-4">
+                                <h5 class="fw-bold text-uppercase small text-light mb-3">
+                                    Tienda
+                                </h5>
+                                <ul class="list-unstyled small">
+                                    <li>
+                                        <a href="#" class="text-secondary text-decoration-none hover-text-white">Todos
+                                            los equipos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-secondary text-decoration-none hover-text-white">Novedades
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-secondary text-decoration-none hover-text-white">A la
+                                            venta</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h5 class="fw-bold text-uppercase small text-light mb-3">
+                                    Soporte
+                                </h5>
+                                <ul class="list-unstyled small">
+                                    <li>
+                                        <a href="#"
+                                            class="text-secondary text-decoration-none hover-text-white">Envíos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-secondary text-decoration-none hover-text-white">Devoluciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-secondary text-decoration-none hover-text-white">FAQ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h5 class="fw-bold text-uppercase small text-light mb-3">
+                                    Social
+                                </h5>
+                                <ul class="list-unstyled small">
+                                    <li>
+                                        <a href="#"
+                                            class="text-secondary text-decoration-none hover-text-white">Instagram</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-secondary text-decoration-none hover-text-white">Twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="text-secondary text-decoration-none hover-text-white">Facebook</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-5 pt-4 border-top border-secondary text-center text-md-start d-flex flex-column flex-md-row justify-content-between small fw-bold text-uppercase text-secondary tracking-wider">
+                    <div>© 2024 LigaMX Store. Official Licensed Product.</div>
+                    <div class="d-flex gap-4 justify-content-center justify-content-md-end mt-3 mt-md-0">
+                        <a href="#" class="text-secondary text-decoration-none hover-text-white">Política de
+                            Privacidad</a>
+                        <a href="#" class="text-secondary text-decoration-none hover-text-white">Términos de
+                            Servicio</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS (necesario para collapse/hamburguesa) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tu JS -->
+    <script src="./home.js"></script>
 </body>
 </html>
