@@ -260,7 +260,7 @@
 
     
     if (btnBuyJersey) {
-      btnBuyJersey.href = `tienda.html`
+      btnBuyJersey.href = `../index.html`
     }
 
     quizView.classList.add("d-none");
